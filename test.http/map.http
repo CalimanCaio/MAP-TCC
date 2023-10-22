@@ -36,3 +36,45 @@ Authorization: Bearer {{accessToken}}
 DELETE {{host}}/api/map/methodologies/3/
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}
+
+
+### List Activity
+GET {{host}}/api/map/activities/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+
+### Create Activity
+POST {{host}}/api/map/activities/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "title": "Activity 1",
+    "description": "Activity 1",
+    "methodology_id": 1
+}
+
+
+### Activity Detail
+GET {{host}}/api/map/activities/1/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+
+### Update Activity
+PUT {{host}}/api/map/activities/10/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "title": "Methodology C",
+    "description": "Methodology C",
+    "methodology_id": 1
+}
+
+
+### Delete Activity
+DELETE {{host}}/api/map/activities/10/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}

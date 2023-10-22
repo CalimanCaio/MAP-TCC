@@ -78,3 +78,47 @@ Authorization: Bearer {{accessToken}}
 DELETE {{host}}/api/map/activities/10/
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}
+
+
+### List Project
+GET {{host}}/api/map/projects/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+
+### Create Project
+POST {{host}}/api/map/projects/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "title": "Activity 1",
+    "description": "Activity 1",
+    "field": "Field",
+    "methodology_id": 1
+}
+
+
+### Project Detail
+GET {{host}}/api/map/projects/1/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+
+### Update Project
+PUT {{host}}/api/map/projects/1/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "title": "Methodology C",
+    "description": "Methodology C",
+    "field": "Field",
+    "methodology_id": 1
+}
+
+
+### Delete Project
+DELETE {{host}}/api/map/projects/1/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}

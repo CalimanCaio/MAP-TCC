@@ -1,7 +1,7 @@
 from rest_framework import generics
 
-from map.models import Methodology, Activity
-from map.serializers import MethodologySerializer, ActivitySerializer
+from map.models import Methodology, Activity, Project
+from map.serializers import MethodologySerializer, ActivitySerializer, ProjectSerializer
 
 
 # Create your views here.
@@ -23,3 +23,13 @@ class ActivityListCreate(generics.ListCreateAPIView):
 class ActivityRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     queryset = Activity.objects.all()
     serializer_class = ActivitySerializer
+
+
+class ProjectListCreate(generics.ListCreateAPIView):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+
+
+class ProjectRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer

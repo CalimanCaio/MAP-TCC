@@ -1,3 +1,16 @@
+### Register
+POST {{host}}/api/auth/register/
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin",
+    "email": "admin@admin.com",
+    "first_name": "admin",
+    "last_name": "admin"
+}
+
+
 ### Authenticate
 POST {{host}}/api/auth/
 Content-Type: application/json
@@ -5,4 +18,17 @@ Content-Type: application/json
 {
     "username": "admin",
     "password": "admin"
+}
+
+> {%
+    client.global.set("accessToken", response.body.access);
+    client.global.set("refreshToken", response.body.refresh);
+%}
+
+### Refresh
+POST {{host}}/api/auth/refresh/
+Content-Type: application/json
+
+{
+    "refresh": "{{refreshToken}}"
 }

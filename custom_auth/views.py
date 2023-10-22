@@ -7,5 +7,5 @@ from custom_auth.serializers import UserSerializer
 class CreateUserView(CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    authentication_classes = ()
+    permission_classes = []
 

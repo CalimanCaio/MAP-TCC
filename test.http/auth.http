@@ -32,3 +32,7 @@ Content-Type: application/json
 {
     "refresh": "{{refreshToken}}"
 }
+
+> {%
+    client.global.set("accessToken", response.body.access);
+%}

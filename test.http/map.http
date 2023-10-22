@@ -1,0 +1,15 @@
+### List Methodology
+GET {{host}}/api/map/methodologies/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+
+### Create Methodology
+POST {{host}}/api/map/methodologies/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "title": "Methodology B",
+    "description": "Methodology B"
+}

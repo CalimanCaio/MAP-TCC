@@ -13,3 +13,26 @@ Authorization: Bearer {{accessToken}}
     "title": "Methodology B",
     "description": "Methodology B"
 }
+
+
+### Methodology Detail
+GET {{host}}/api/map/methodologies/3/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+
+### Update Methodology
+PUT {{host}}/api/map/methodologies/3/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "title": "Methodology C",
+    "description": "Methodology C"
+}
+
+
+### Delete Methodology
+DELETE {{host}}/api/map/methodologies/3/
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}

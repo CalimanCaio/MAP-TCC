@@ -17,7 +17,14 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.IntegerField(primary_key=True, serialize=False)),
                 ('title', models.CharField(max_length=100)),
-                ('description', models.TextField()),
+            ],
+        ),
+                migrations.CreateModel(
+            name='Activity',
+            fields=[
+                ('id', models.IntegerField(primary_key=True, serialize=False)),
+                ('title', models.CharField(max_length=100)),
+                ('methodology', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='map.methodology')),
             ],
         ),
         migrations.CreateModel(
@@ -25,18 +32,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.IntegerField(primary_key=True, serialize=False)),
                 ('title', models.CharField(max_length=100)),
-                ('description', models.TextField()),
-                ('field', models.CharField(max_length=100)),
-                ('methodology', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='map.methodology')),
-            ],
-        ),
-        migrations.CreateModel(
-            name='Activity',
-            fields=[
-                ('id', models.IntegerField(primary_key=True, serialize=False)),
-                ('title', models.CharField(max_length=100)),
-                ('description', models.TextField()),
-                ('methodology', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='map.methodology')),
+                ('acitivities', models.ManyToManyField(on_delete=django.db.models.deletion.CASCADE, to='map.activities')),
             ],
         ),
     ]

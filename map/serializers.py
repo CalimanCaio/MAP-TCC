@@ -8,7 +8,7 @@ class MethodologySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Methodology
-        fields = ('id', 'title', 'description')
+        fields = ('id', 'title')
 
 
 class ActivitySerializer(serializers.ModelSerializer):
@@ -17,13 +17,12 @@ class ActivitySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Activity
-        fields = ('id', 'title', 'description', 'methodology_id')
+        fields = ('id', 'title', 'methodology_id')
 
 
 class ProjectSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True, allow_null=True)
-    methodology_id = serializers.IntegerField(required=True)
 
     class Meta:
         model = Project
-        fields = ('id', 'title', 'field', 'description', 'methodology_id')
+        fields = ('id', 'title', 'description', 'activities')
